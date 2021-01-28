@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https:unpkg.com/@babel/standalone/babel.min.js"></script>
+   
+    <script crossorigin src="https:unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https:unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<link rel="stylesheet" href="https:cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">   
+<title>RESUME USING REACT</title>
+    
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    
+const rootEL=document.getElementById("root");
+const Title=({text}) =><h3 className="heading">{text}</h3>;
+const Carrierobj=({text})=><div className="container"><p><b>Career Objective:</b></p><p>{text}</p></div>
+ const Break=()=><br/>
+ const Line=()=><hr/>
+ const Info=({email,phone})=><div><p>{email}<Break/>{phone}</p></div>
+ const Education=()=><div className="container">
+    <p><b>Education:</b></p>
+    <table className="table">
+  <thead className="thead-dark">
+    <tr>
+      <th scope="col">BOARD/UNIVERSITY</th>
+      <th scope="col">YEAR</th>
+      <th scope="col">PERCENTAGE</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>S.B.O.A SCHOOL & JUNIOR COLLEGE</td>
+      <td>2013</td>
+      <td>9.4CGPA</td>
+    </tr>
+    <tr>
+        <td>S.B.O.A SCHOOL & JUNIOR COLLEGE</td>
+      <td>2015</td>
+      <td>84%</td>
+    </tr>
+    <tr>
+        <td>INDIAN INSTITUTE OF INFORMATION TECHNOLOGY</td>
+      <td>2019</td>
+      <td>6.2CGPA</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+</div>
+const Skills=({language,skill})=><div><p><b>{language}:</b>{skill}</p></div>
+const Uskill=()=>{
+    return(
+        <div className="container">
+          <p><b>Skills:</b></p>
+            <Skills language="Programming languages" skill = "C++,C,JAVASCRIPT"/>
+            <Skills language="Web Technologies" skill = "HTML,CSS,Bootstrap"/>
+            </div>
+    )
+}
+const Mysw=({strength,weakness})=><div><p>{strength}{weakness}</p></div>
+const Usk=()=>{
+    return(
+        <div className="container">
+            <div className="row">
+                <div className="col-6 ">
+                  <p><b>STRENGTHS</b></p>
+                  <ul><li>
+            <Mysw strength="Hardworker" /></li>
+            <li>
+            <Mysw strength="Honest" /></li></ul>
+            </div>
+            <div className="col-6 ">
+              <p><b>WEAKNESS</b></p>
+              <ul><li>
+            <Mysw weakness="Self-criticism" /></li>
+              <li>
+            <Mysw weakness="Insecure" /></li></ul>
+              </div></div>
+            </div>
+    )
+}
+ const Proj=({project})=><p>{project}</p>
+ const Proje=()=>{
+      return(
+     <div className="container">
+       <p><b>Projects:</b></p>
+       <ul><li>
+        <Proj project="Recipe App"/></li>
+        <li>
+         <Proj project="Movies App"/></li>
+         <li>
+         <Proj project="Superheroes App"/></li></ul>
+         </div>
+        
+   )
+
+ }
+
+
+
+
+
+
+const App=()=>{
+    return(
+        <div className="container">
+            <div className="col-4">
+    <Title text="Durgesh Sivashanmugam"/>
+    <Info email="sivadurgesh0897@gmail.com"  phone="9841928645"/></div>
+     <Line/>
+    <Carrierobj text="To begin career in orgranization with abudant oppurtunity to grow and develop"/>
+    <Line/>
+    <Education/>
+    <Line/>
+    <Uskill/>
+    <Line/>
+    <Proje/>
+    <Line/>
+    <Usk/>
+    <Line/>
+    
+    </div>
+    )
+
+}
+
+
+
+
+
+
+
+ReactDOM.render(<App/>,document.getElementById("root"))
+
+
+
+    
+  </script>
+</body>
+</html>
